@@ -9,11 +9,12 @@ formSend.addEventListener("submit", event => {
 
     let objResultInputForm = {};
 
-    if (emailValue === "" || pasValue === "") {
-        alert("All form fields must be filled in")
-    } else {
+    if (emailValue !== "" && pasValue !== "") {
         objResultInputForm.email = emailValue;
         objResultInputForm.password = pasValue;
+    } else {
+        alert("All form fields must be filled in");
+        return
     };
     console.log(objResultInputForm);
     formSend.reset();
